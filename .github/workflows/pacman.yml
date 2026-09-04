@@ -2,13 +2,13 @@ name: Generate Pac-Man
 
 on:
   schedule:
-    - cron: "0 */24 * * *"
+    - cron: "0 0 * * *"
 
   workflow_dispatch:
 
   push:
     branches:
-      - main
+      main
 
 jobs:
   generate:
@@ -19,44 +19,41 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      # 1. Gera o Pac-Man normalmente
       - name: Generate Pac-Man
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
 
-      # 2. Personaliza as cores para Tokyo Night
       - name: Apply Tokyo Night colors
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
 
-          files = list(Path("dist").glob("*.svg"))
+          # Paleta Tokyo Night
+          replacements = {
+              "#161b22": "#1a1b26",
+              "#0d1117": "#1a1b26",
 
-          colors = {
-              "#ebedf0": "#1a1b26",
-              "#9be9a8": "#565f89",
+              "#ebedf0": "#24283b",
+              "#9be9a8": "#414868",
               "#40c463": "#7aa2f7",
               "#30a14e": "#bb9af7",
               "#216e39": "#7dcfff",
 
-              "#40c463": "#7aa2f7",
-              "#30a14e": "#bb9af7",
-              "#216e39": "#7dcfff",
+              "#39d353": "#9ece6a",
           }
 
-          for file in files:
+          for file in Path("dist").glob("*.svg"):
               content = file.read_text()
 
-              for old, new in colors.items():
+              for old, new in replacements.items():
                   content = content.replace(old, new)
 
               file.write_text(content)
-
-              print(f"Tokyo Night aplicado em: {file}")
+              print(f"✓ Tokyo Night aplicado: {file}")
           PY
 
-      # 3. Publica o SVG na branch output
       - name: Push Pac-Man to output branch
         uses: crazy-max/ghaction-github-pages@v5
         with:
