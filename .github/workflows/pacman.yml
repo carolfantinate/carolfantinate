@@ -18,9 +18,10 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
 
-      - name: Deploy to GitHub Pages
+      - name: Push Pac-Man
         uses: crazy-max/ghaction-github-pages@v4
         with:
           build_dir: dist
+          build_branch: output
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
