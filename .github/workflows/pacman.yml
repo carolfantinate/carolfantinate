@@ -2,15 +2,19 @@ name: Generate Pac-Man
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 */24 * * *"
   workflow_dispatch:
-
-permissions:
-  contents: write
+  push:
+    branches:
+      - main
 
 jobs:
   generate:
+    permissions:
+      contents: write
+
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Generate Pac-Man
@@ -18,10 +22,10 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
 
-      - name: Push Pac-Man
+      - name: Push Pac-Man to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
+          target_branch: output
           build_dir: dist
-          build_branch: output
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
