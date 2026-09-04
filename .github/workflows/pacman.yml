@@ -1,4 +1,4 @@
-name: Pac-Man
+name: Generate Pac-Man
 
 on:
   schedule:
@@ -9,15 +9,16 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
-      # seus outros passos...
-
       - name: Generate Pac-Man
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
+
+      - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
           build_dir: dist
