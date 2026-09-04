@@ -3,7 +3,9 @@ name: Generate Pac-Man
 on:
   schedule:
     - cron: "0 */24 * * *"
+
   workflow_dispatch:
+
   push:
     branches:
       - main
@@ -14,7 +16,6 @@ jobs:
       contents: write
 
     runs-on: ubuntu-latest
-    timeout-minutes: 5
 
     steps:
       - name: Generate Pac-Man
