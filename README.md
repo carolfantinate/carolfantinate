@@ -1,16 +1,20 @@
-## Hi there 👋
+# Olá, eu sou a Carol 👋🏻
 
-<!--
-**carolfantinate/carolfantinate** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### Software Developer 💻
 
-Here are some ideas to get you started:
+Tenho 17 anos, me formando em **Desenvolvimento de Sistemas**, interessada em criar aplicações, explorar novas tecnologias e transformar ideias em código.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## 💻 Tecnologias
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,cs,react,git,github,mysql" />
+</p>
+
+---
+
+## 📊 Estatísticas 
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=carolfantinate&theme=tokyonight&hide_border=true&locale=pt_BR" alt="GitHub Streak"/>
+</div>
