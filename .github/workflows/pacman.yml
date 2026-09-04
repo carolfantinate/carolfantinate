@@ -16,17 +16,52 @@ jobs:
       contents: write
 
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
+      # 1. Gera o Pac-Man normalmente
       - name: Generate Pac-Man
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
 
+      # 2. Personaliza as cores para Tokyo Night
+      - name: Apply Tokyo Night colors
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          files = list(Path("dist").glob("*.svg"))
+
+          colors = {
+              "#ebedf0": "#1a1b26",
+              "#9be9a8": "#565f89",
+              "#40c463": "#7aa2f7",
+              "#30a14e": "#bb9af7",
+              "#216e39": "#7dcfff",
+
+              "#40c463": "#7aa2f7",
+              "#30a14e": "#bb9af7",
+              "#216e39": "#7dcfff",
+          }
+
+          for file in files:
+              content = file.read_text()
+
+              for old, new in colors.items():
+                  content = content.replace(old, new)
+
+              file.write_text(content)
+
+              print(f"Tokyo Night aplicado em: {file}")
+          PY
+
+      # 3. Publica o SVG na branch output
       - name: Push Pac-Man to output branch
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: output
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
