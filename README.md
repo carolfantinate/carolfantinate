@@ -24,5 +24,5 @@ Tenho 17 anos, me formando em **Desenvolvimento de Sistemas**, interessada em cr
 ## 👾 Contribuições
 
 <div align="center">
- <img src="https://raw.githubusercontent.com/carolfantinate/carolfantinate/output/pacman-contribution-graph.svg">
+ <img src="https://raw.githubusercontent.com/carolfantinate/carolfantinate/output/pacman-contribution-graph-dark.svg">
 </div>
