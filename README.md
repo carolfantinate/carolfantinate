@@ -18,3 +18,11 @@ Tenho 17 anos, me formando em **Desenvolvimento de Sistemas**, interessada em cr
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=carolfantinate&theme=tokyonight&hide_border=true&locale=pt_BR" alt="GitHub Streak"/>
 </div>
+
+---
+
+## 👾 Contribuições
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/carolfantinate/carolfantinate/output/pacman-contribution-graph.svg" alt="Pacman Contribution Graph"/>
+</div>
