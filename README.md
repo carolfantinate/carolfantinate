@@ -2,7 +2,7 @@
 
 ### Software Developer 💻
 
-Tenho 17 anos, me formando em **Desenvolvimento de Sistemas**, interessada em criar aplicações, explorar novas tecnologias e transformar ideias em código.
+Tenho 18 anos, me formando em **Desenvolvimento de Sistemas**, interessada em criar aplicações, explorar novas tecnologias e transformar ideias em código.
 
 ---
 
